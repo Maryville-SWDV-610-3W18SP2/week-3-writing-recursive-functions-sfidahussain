@@ -7,9 +7,12 @@ def findMinMaxRec(n):
     return findMax(n), findMin(n)
 
 def findMax(n):
+    # if the list has only one element, then return that element because that is the max
     if len(n) == 1:
         return n[0]
+    # the list has multiple elements
     else:
+        # max is set recursively while splicing the sequence. Once it reaches one element, goes to first if statement.
         max = findMax(n[1:])
         return max if max > n[0] else n[0]
 
